@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ->->->->->->->->->->->-> VARIABLE CSS <-<-<-<-<-<-<-<-<-<-<-<- */
+:root {
+    --header-height: 3rem;
+
+    /* ->->->->->->->->->->->-> COLORS <-<-<-<-<-<-<-<-<-<-<-<- */
+    /*Change to your favorite color*/
+    --hue-color: 250; /* Purple 250 - Green 142 - Blue 230 - Pink 340 */
+
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #FFF;
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /*  ->->->->->->->->->->->-> Fonts and Typography <-<-<-<-<-<-<-<-<-<-<-<-  */
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8x, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* Font Weight */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* Margenes Bottom */
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*  ->->->->->->->->->->->-> z index <-<-<-<-<-<-<-<-<-<-<-<-  */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 100;
+}
+
+/* Font size for lage devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.5rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.header {
+    width: 97%;
+    background-color: #FFFFFF;
+    height: 3.5rem;
+    box-shadow: rgb(67 71 85 / 27%) 0px 0px 0.25em, rgb(90 125 188 / 5%) 0px 0.25em 1em;
+    position: fixed;
+    bottom: 10px;
+    border-radius: 10px;
+    margin-left: 5.4px;
+}
+
+/* Navbar */
+.nav-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 3.6rem;
+}
+
+.nav__item {
+    list-style: none;
+    margin-top: .2rem;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all .3s linear;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__toggle {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: .3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all .3s linear;
+}
+
+.nav__toggle:hover {
+    color: var(--first-color);
+}
+
+.app__more {
+    font-size: .8rem;
+}
+
+.nav__toggle:hover {
+    color: var(--first-color);
+}
+
+@media screen and (max-width: 2000px) {
+    .nav__menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+}
+
+.nav__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__icon {
+    font-size: 1.2rem
+}
+
+.nav__close {
+    position: absolute;
+    right: 1.5rem;
+    bottom: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--first-color);
+}
+
+
+.nav__close:hover {
+    color: var(--first-color-alt);
+}
+
+/* Show menu */
+.show-menu {
+    bottom: 0;
+}
+
+/* MEDIA QUERIES */
+/* For Small devices */
+@media screen and (max-width: 280px) {
+    .header {
+        width: 96%;
+        background-color: #FFFFFF;
+        height: 3.5rem;
+        box-shadow: rgb(67 71 85 / 27%) 0px 0px 0.25em, rgb(90 125 188 / 5%) 0px 0.25em 1em;
+        position: fixed;
+        bottom: 10px;
+        border-radius: 10px;
+        margin-left: 5.5px;
+    }
+}
+
+/* For Medium devices */
+@media (min-width: 425px) and (max-width: 625px) {
+    .header {
+        width: 98%;
+        background-color: #FFFFFF;
+        height: 3.5rem;
+        box-shadow: rgb(67 71 85 / 27%) 0px 0px 0.25em, rgb(90 125 188 / 5%) 0px 0.25em 1em;
+        position: fixed;
+        bottom: 10px;
+        border-radius: 10px;
+        margin-left: 5.5px;
+    }
+
+    .nav__menu {
+        padding: 2rem .25rem 4rem;
+        background-color: #FFFFFF;
+    }
+}
+
+@media (min-width: 625px) and (max-width: 768px) {
+    .header {
+        width: 98%;
+        background-color: #FFFFFF;
+        height: 3.5rem;
+        box-shadow: rgb(67 71 85 / 27%) 0px 0px 0.25em, rgb(90 125 188 / 5%) 0px 0.25em 1em;
+        position: fixed;
+        bottom: 10px;
+        border-radius: 10px;
+        margin-left: 6.5px;
+    }
+
+    .nav__menu {
+        padding: 2rem .25rem 4rem;
+        background-color: #FFFFFF;
+    }
+}
+
+/* For Large devices */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        width: 98.5%;
+        background-color: #FFFFFF;
+        height: 3.5rem;
+        box-shadow: rgb(67 71 85 / 27%) 0px 0px 0.25em, rgb(90 125 188 / 5%) 0px 0.25em 1em;
+        position: fixed;
+        bottom: 10px;
+        border-radius: 10px;
+        margin-left: 5.8px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .header {
+        width: 99%;
+        background-color: #FFFFFF;
+        height: 3.5rem;
+        box-shadow: rgb(67 71 85 / 27%) 0px 0px 0.25em, rgb(90 125 188 / 5%) 0px 0.25em 1em;
+        position: fixed;
+        bottom: 10px;
+        border-radius: 10px;
+        margin-left: 7.5px;
+    }
+}
